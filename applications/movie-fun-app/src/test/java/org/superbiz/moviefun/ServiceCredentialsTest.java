@@ -22,9 +22,9 @@ public class ServiceCredentialsTest {
                 "     \"uri\": \"mysql://someuri\",\n" +
                 "     \"username\": \"username\"\n" +
                 "    },\n" +
-                "    \"instance_name\": \"movies-mysql\",\n" +
+                "    \"instance_name\": \"movies\",\n" +
                 "    \"label\": \"cleardb\",\n" +
-                "    \"name\": \"movies-mysql\",\n" +
+                "    \"name\": \"movies\",\n" +
                 "    \"plan\": \"spark\",\n" +
                 "    \"provider\": null,\n" +
                 "    \"syslog_drain_url\": null,\n" +

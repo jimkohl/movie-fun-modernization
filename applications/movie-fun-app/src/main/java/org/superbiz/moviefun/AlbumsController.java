@@ -1,4 +1,4 @@
-package org.superbiz.moviefun.albums;
+package org.superbiz.moviefun;
 
 import org.apache.tika.io.IOUtils;
 import org.slf4j.Logger;
@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.superbiz.moviefun.albums.AlbumsBean;
 import org.superbiz.moviefun.blobstore.Blob;
 import org.superbiz.moviefun.blobstore.BlobStore;
 
@@ -37,8 +38,8 @@ public class AlbumsController {
 
     @GetMapping
     public String index(Map<String, Object> model) {
-        model.put("albums", albumsBean.getAlbums());
-        return "albums";
+        model.put("org/superbiz/moviefun/albums", albumsBean.getAlbums());
+        return "org/superbiz/moviefun/albums";
     }
 
     @GetMapping("/{albumId}")

@@ -41,8 +41,8 @@ public class HomeController {
             albumsBean.addAlbum(album);
         }
 
-        model.put("movies", moviesBean.getMovies());
-        model.put("albums", albumsBean.getAlbums());
+        model.put("org/superbiz/moviefun/movies", moviesBean.getMovies());
+        model.put("org/superbiz/moviefun/albums", albumsBean.getAlbums());
 
         return "setup";
     }

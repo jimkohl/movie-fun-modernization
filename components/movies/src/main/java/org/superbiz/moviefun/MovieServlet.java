@@ -21,7 +21,6 @@ import org.springframework.stereotype.Component;
 import org.superbiz.moviefun.movies.Movie;
 import org.superbiz.moviefun.movies.MoviesBean;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,14 +32,17 @@ import java.util.List;
  * @version $Revision$ $Date$
  */
 @Component
-public class ActionServlet extends HttpServlet {
+public class MovieServlet extends HttpServlet {
 
     private static final long serialVersionUID = -5832176047021911038L;
 
     public static int PAGE_SIZE = 5;
 
-    @EJB
-    private MoviesBean moviesBean;
+    private final MoviesBean moviesBean;
+
+    public MovieServlet(MoviesBean moviesBean) {
+        this.moviesBean = moviesBean;
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -129,7 +131,7 @@ public class ActionServlet extends HttpServlet {
             request.setAttribute("end", end);
             request.setAttribute("page", page);
             request.setAttribute("pageCount", pageCount);
-            request.setAttribute("org/superbiz/moviefun/movies", range);
+            request.setAttribute("movies", range);
             request.setAttribute("key", key);
             request.setAttribute("field", field);
         }

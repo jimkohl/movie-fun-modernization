@@ -20,7 +20,6 @@ import java.util.Map;
 import java.util.Optional;
 
 import static java.lang.String.format;
-import static org.springframework.http.MediaType.IMAGE_JPEG_VALUE;
 
 @Controller
 @RequestMapping("/albums")
@@ -38,8 +37,8 @@ public class AlbumsController {
 
     @GetMapping
     public String index(Map<String, Object> model) {
-        model.put("org/superbiz/moviefun/albums", albumsBean.getAlbums());
-        return "org/superbiz/moviefun/albums";
+        model.put("albums", albumsBean.getAlbums());
+        return "albums";
     }
 
     @GetMapping("/{albumId}")
@@ -93,7 +92,7 @@ public class AlbumsController {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream input = classLoader.getResourceAsStream("default-cover.jpg");
 
-        return new Blob("default-cover", input, IMAGE_JPEG_VALUE);
+        return new Blob("default-cover", input, MediaType.IMAGE_JPEG_VALUE);
     }
 
     private String getCoverBlobName(@PathVariable long albumId) {

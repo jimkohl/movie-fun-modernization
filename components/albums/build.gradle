@@ -1,24 +1,23 @@
 group = "org.superbiz"
 
-
 version = "1.1.0-SNAPSHOT"
 
-description = "OpenEJB :: Web Examples :: Moviefun :: movies"
+description = "OpenEJB :: Web Examples :: Moviefun :: albums"
 
 apply from: "../../java.gradle"
 
 dependencies {
-   
     compile "taglibs:standard:1.1.2"
 
+    compile "org.springframework:spring-web:$springVersion"
     compile "org.springframework.data:spring-data-jpa:1.11.14.RELEASE"
     compile "javax.persistence:javax.persistence-api:2.2"
-    compile "javax.servlet:javax.servlet-api:3.1.0"
     
     compile "mysql:mysql-connector-java:5.1.40"
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.7.0"
     compile "commons-lang:commons-lang:2.4"
     compile "org.apache.tika:tika-core:1.14"
+    compile "com.amazonaws:aws-java-sdk:1.11.74"
 
     testCompile "junit:junit:4.12"
 }

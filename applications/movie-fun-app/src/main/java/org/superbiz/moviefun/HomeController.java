@@ -2,6 +2,7 @@ package org.superbiz.moviefun;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.superbiz.moviefun.albums.Album;
 import org.superbiz.moviefun.albums.AlbumFixtures;
 import org.superbiz.moviefun.albums.AlbumsBean;
@@ -41,8 +42,8 @@ public class HomeController {
             albumsBean.addAlbum(album);
         }
 
-        model.put("org/superbiz/moviefun/movies", moviesBean.getMovies());
-        model.put("org/superbiz/moviefun/albums", albumsBean.getAlbums());
+        model.put("movies", moviesBean.getMovies());
+        model.put("albums", albumsBean.getAlbums());
 
         return "setup";
     }
